@@ -2,5 +2,5 @@
 
 ```markdown
 flink基础学习
-- 基于flink1.13
+- 基于flink1.17
 ```
