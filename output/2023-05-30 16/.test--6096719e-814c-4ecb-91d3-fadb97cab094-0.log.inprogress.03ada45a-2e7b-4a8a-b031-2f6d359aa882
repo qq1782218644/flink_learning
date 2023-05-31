@@ -1,0 +1,7 @@
+Record{id=3, name='Curry', page='end', timestamp=1685435573057}
+Record{id=1, name='Harden', page='end', timestamp=1685435577069}
+Record{id=4, name='Durant', page='search', timestamp=1685435581080}
+Record{id=4, name='Durant', page='cart', timestamp=1685435585091}
+Record{id=2, name='James', page='search', timestamp=1685435589106}
+Record{id=3, name='Curry', page='language', timestamp=1685435593118}
+Record{id=1, name='Harden', page='start', timestamp=1685435597127}

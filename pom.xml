@@ -12,6 +12,14 @@
         <flink.version>1.17.0</flink.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>apache-snapshots</id>
+            <name>apache snapshots</name>
+            <url>https://repository.apache.org/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
 
     <dependencies>
         <dependency>
@@ -43,6 +51,20 @@
             <artifactId>flink-connector-datagen</artifactId>
             <version>${flink.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-connector-jdbc</artifactId>
+            <version>1.17-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.32</version>
+        </dependency>
+
+
     </dependencies>
     
 </project>

@@ -1,4 +1,4 @@
-package com.litao.flink.chap3.transform.base;
+package com.litao.flink.chap3.transform.reduce;
 
 import com.litao.flink.utils.WaterSensor;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;

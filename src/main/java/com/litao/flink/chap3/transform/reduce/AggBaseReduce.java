@@ -1,4 +1,4 @@
-package com.litao.flink.chap3.transform.base;
+package com.litao.flink.chap3.transform.reduce;
 
 import com.litao.flink.utils.Record;
 import com.litao.flink.utils.RecordSource;
@@ -35,6 +35,8 @@ public class AggBaseReduce {
         ds.keyBy(record -> record.id)
                 .sum("ts")
                 .print("min");
+        // keyBy后得到的是KeyedStream,经过规约后,又重新得到了DataStream,所以keyBy和reduce是承兑出现的
+        // 规约算子,会为每个key保留一个聚合后的状态,并不断更新,且这些状态永不清除,所以使用规约算子,需要注意key的数据量
 
 
         env.execute();
