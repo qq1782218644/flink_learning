@@ -22,9 +22,9 @@ public class TimerClearStat {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
         SingleOutputStreamOperator<SensorReading> sensorDs = env
-                .fromElements(new SensorReading("001", 1000L, 10L)
-                        , new SensorReading("001", 2000L, 20L))
-                .assignTimestampsAndWatermarks(WatermarkStrategy.<SensorReading>forBoundedOutOfOrderness(Duration.ZERO)
+                .fromElements(new SensorReading("001", 10000L, 10L)
+                        , new SensorReading("001", 20000L, 20L))
+                .assignTimestampsAndWatermarks(WatermarkStrategy.<SensorReading>forBoundedOutOfOrderness(Duration.ofSeconds(1))
                         .withTimestampAssigner(new SerializableTimestampAssigner<SensorReading>() {
                             @Override
                             public long extractTimestamp(SensorReading sensorReading, long l) {
@@ -81,6 +81,7 @@ public class TimerClearStat {
 
             // 设置清理状态的时间为一个小时之后
             Long newTimer = ctx.timestamp() + 3600 * 1000;
+            System.out.println( ctx.timestamp());
             // 获取当前定时器定时的时间
             Long lastTimer = lastTimerState.value();
             // 如果当前定时器不为空则删除
